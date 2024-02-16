@@ -78,9 +78,9 @@ def profile_user(request):
 
 
 @login_required
-def view_profile(request, user_id):
+def profile(request, user_id):
     user_profile = get_object_or_404(UserProfile, user__id=user_id)
-    return render(request, 'view_profile.html', {'user_profile': user_profile})
+    return render(request, 'profile.html', {'user_profile': user_profile})
 
 
 @login_required

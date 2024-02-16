@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}View Profile{% endblock %}
+
+{% block content %}
+    <div class="card w-50 ms-3 p-3">
+        <h1>Profile Details</h1>
+        <p><strong>Name: </strong>: {{ user_profile.user.username }}</p>
+        <p><strong>Email: </strong> {{ user_profile.user.email }}</p>
+        <p><strong>Job Title: </strong> {{ user_profile.job_title }}</p>
+
+        <a href="{% url "members_list" %}" class="btn btn-secondary">Back to members list</a>
+    </div>
+
+  
+{% endblock %}
