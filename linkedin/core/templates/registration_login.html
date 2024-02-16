@@ -1,0 +1,28 @@
+<!-- registration_login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Register and Login{% endblock %}
+
+{% block content %}
+    <h1 class="text-center py-3 text-primary">Linkedin Challenge</h1>
+
+    <div class="d-flex justify-content-around row justify-content-center m-auto">
+        <div class="col-md-4">
+            <form method="post" action="{% url 'register' %}" class="mb-4">
+                {% csrf_token %}
+                <h2 class="mb-3">Register</h2>
+                {{ registration_form.as_p }}
+                <button type="submit" class="btn btn-primary">Register</button>                
+            </form>
+        </div>
+
+        <div class="col-md-4">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <h2 class="mb-3">Login</h2>
+                {{ login_form.as_p }}
+                <button type="submit" class="btn btn-success">Login</button>                
+            </form>
+        </div>
+    </div>
+{% endblock %}
